@@ -47,3 +47,9 @@ que dentro dele eu só possuo codigo de definição de tipos do typeScript.
 
 -Dentro da pasta styles eu crio um arquivo para meu css global e dentro desse arquivo eu devo importar de dentro do 
 styled-component o createGlobalStyle e vou utilizar o GlobalStyle dentro eu crio todo o css global da aplicação.
+
+## Cores e fontes
+
+- Nesse projeto ao invés de colocar as cores no arquivo css global eu coloquei no arquivo de theme.
+- lembrando que para poder usar essas cores deve ser utilizada a propriedade props setando o theme 
+fazendo interpolação.
