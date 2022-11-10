@@ -53,3 +53,15 @@ styled-component o createGlobalStyle e vou utilizar o GlobalStyle dentro eu crio
 - Nesse projeto ao invés de colocar as cores no arquivo css global eu coloquei no arquivo de theme.
 - lembrando que para poder usar essas cores deve ser utilizada a propriedade props setando o theme 
 fazendo interpolação.
+
+## Configurando ESLint
+
+- Vem de ECMA SCRIPT Lint ele basicamente vai validar se o código está seguindo os padrões do projeto 
+- Essa ferramenta é utilizada para padronizar projetos por que em projetos com varias pessoas trabalhando 
+as vezes cada pessoa utiliza formatações diferentes por ex.
+- Existe uma extensão no VScode ESLint é importante ter instalada.
+- Também vou instalar como uma dependencia de desenvolvimento com o comando  npm i eslint -D  
+- também vamos instalar um pacote da Rocketseat com o comando npm i @rocketseat/eslint-config -D 
+- Caso fosse necessário criar uma configuração propria poderemos rodar o comando   npx eslint --init  
+- Após isso eu crio um arquivo chamado .eslintrc.json dentro desse arquivo eu crio um extends com o nome do pacote que vou utilizar.
+- Para de forma automatica fazer correções em um projeto ja existente e corrgir tudo que estiver em outro padrão  basta rodar o comando    npx eslint src --ext .ts,.tsx --fix
