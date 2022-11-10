@@ -42,3 +42,8 @@ aplicação.
 - eu crio uma pasta chamada @types e dentro eu vou criar um arquivo chamado styled.d.ts esse tipo de arquivo indica 
 que dentro dele eu só possuo codigo de definição de tipos do typeScript.
 - dentro desse arquivo eu devo fazer a importação do styled-components e também do meu tema default que eu criei após isso eu faço a total integração ao typeScript utilizando algumas palavras reservadas do TS. 
+
+## Estilos Globais
+
+-Dentro da pasta styles eu crio um arquivo para meu css global e dentro desse arquivo eu devo importar de dentro do 
+styled-component o createGlobalStyle e vou utilizar o GlobalStyle dentro eu crio todo o css global da aplicação.
