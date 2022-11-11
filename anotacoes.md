@@ -96,3 +96,6 @@ container em todas as páginas vamos configurar todo o layout da nossa aplicaç�
 - No meu menu ao inves de usar a tag ancora do html eu  utilizo o componente NavLink e no lugar da propriedade src eu utilizo to 
 - O NavLink cria uma propriedade active que eu posso dentro do meu css utilizar por exemplo para colocar 
 alguma cor depois que clicar no icone.
+
+
+
