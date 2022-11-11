@@ -65,3 +65,14 @@ as vezes cada pessoa utiliza formatações diferentes por ex.
 - Caso fosse necessário criar uma configuração propria poderemos rodar o comando   npx eslint --init  
 - Após isso eu crio um arquivo chamado .eslintrc.json dentro desse arquivo eu crio um extends com o nome do pacote que vou utilizar.
 - Para de forma automatica fazer correções em um projeto ja existente e corrgir tudo que estiver em outro padrão  basta rodar o comando    npx eslint src --ext .ts,.tsx --fix
+
+## React Router DOM 
+
+- Utilizamos a biblioteca mais famosa dentro do react para lidar com rotas que é a react-router como etsamos 
+lidando com ele na web utilizaremos o react-router-dom e para instalar eu rodo o seguinte comando: 
+        npm i react-router-dom 
+- dentro de src foi criada uma pasta page e dentro dela temos dois componentes que serão duas páginas History.tsx e Home.tsx
+- Também foi criado um componente chamado Router.tsx para fazer a definição de rotas é importante  fazer as importações do Routes e Route e em seguida passar as path e as paginas dentro do element.
+- Importante após isso voltar ao App.tsx e importar o Router.
+- Importante também importar o BrowserRouter e colocar em volta do Router dentro do arquivo App.tsx
+
