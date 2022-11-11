@@ -76,3 +76,13 @@ lidando com ele na web utilizaremos o react-router-dom e para instalar eu rodo o
 - Importante após isso voltar ao App.tsx e importar o Router.
 - Importante também importar o BrowserRouter e colocar em volta do Router dentro do arquivo App.tsx
 
+## Layout de rotas
+
+- Criei um componente chamado Header 
+- Foi criado uma pasta chamada layouts e dentro um arquivo chamado DefaultLayout.tsx
+- dentro desse componente de defaultlayout eu vou colocar o Header que vai aparecer em 
+todas as páginas e vou importar de dentro do react-router-dom o  Outlet que esse componente 
+gera um espaço que será preenchido com algum conteudo.
+- Para que funcione eu devo voltar ao arquivo de rotas e por volta das minhas rotas eu devo 
+colocar mais um elemento Route, nesse Route eu devo colocar uma / no path e no element passar meu componente DefaultLayout.
+- com isso eu conigo definir componentes que vão aparecer em todas as páginas e evitar duplicação de códigos.
