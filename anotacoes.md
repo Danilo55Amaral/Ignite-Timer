@@ -86,3 +86,13 @@ gera um espaço que será preenchido com algum conteudo.
 - Para que funcione eu devo voltar ao arquivo de rotas e por volta das minhas rotas eu devo 
 colocar mais um elemento Route, nesse Route eu devo colocar uma / no path e no element passar meu componente DefaultLayout.
 - com isso eu conigo definir componentes que vão aparecer em todas as páginas e evitar duplicação de códigos.
+
+## Header & Layout 
+
+- O DefaultLayout é um componente que criamos que vai servir com ripper ou seja como um 
+container em todas as páginas vamos configurar todo o layout da nossa aplicação dentro desse componente.
+- Foi utilizado o pacote de icones do phosphor react para instalar basta rodar o comando abaiixo 
+    npm i phosphor-react  
+- No meu menu ao inves de usar a tag ancora do html eu  utilizo o componente NavLink e no lugar da propriedade src eu utilizo to 
+- O NavLink cria uma propriedade active que eu posso dentro do meu css utilizar por exemplo para colocar 
+alguma cor depois que clicar no icone.
