@@ -97,5 +97,14 @@ container em todas as páginas vamos configurar todo o layout da nossa aplicaç�
 - O NavLink cria uma propriedade active que eu posso dentro do meu css utilizar por exemplo para colocar 
 alguma cor depois que clicar no icone.
 
+## Aprimorando inputs 
+
+PS- O datalist me permite criar uma lista de coisas dentro do meu input, uma lista de sugestões
+por ex.
+- dentro do html existem alguns elementos que podem ser utilizadas como o step que permite com 
+que seja definido um valor para incrementar toda vez eu auamentar a quantidade de valores, e a 
+propriedade min para estipular um valor minimo e max para um valor maximo.
+
+## Página: history 
 
 
