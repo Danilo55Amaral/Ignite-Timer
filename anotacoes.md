@@ -105,6 +105,6 @@ por ex.
 que seja definido um valor para incrementar toda vez eu auamentar a quantidade de valores, e a 
 propriedade min para estipular um valor minimo e max para um valor maximo.
 
-## Página: history 
+ 
 
 
