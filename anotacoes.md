@@ -105,6 +105,24 @@ por ex.
 que seja definido um valor para incrementar toda vez eu auamentar a quantidade de valores, e a 
 propriedade min para estipular um valor minimo e max para um valor maximo.
 
- 
+ ## Componente status
+
+ - Quando estamos trabalhando com Styled-components nem sempre é necessário criar 
+ um arquivo style separado, dependendo pode ser criado um componente de styles dentro do arquivo já existente. 
+
+ - No styled conseguimos adicionar elementos através do after e do before inserimos esses elementos dentro do html pelo componente styles.
+ - quando utilizamos um before é necessário colocar a propriedade content mesmo estando vazia.
+
+ - Dá para fazer componentes de stilos do styled receber propriedades e para isso 
+ é necessário criar uma interface e passar propriedades utilizando props, lembrando que 
+ após fazer isso é necessário passar a propriedade onde o componente foi setado.
+
+ - como estamos passando cores nessa propriedade foicriado um objeto chamado STATUS_COLOR passando os rgbs das cores.
+
+ - A propriedade as const é utilizada para o typescript entender que cada chave do objeto vai 
+ possuir um valor especifico, nesse caso se não for utilizado vai dar erro por que ele vai entender tudo como string na hora de utilizar no   props.theme[STATUS_COLORS[props.statusColor]]
+
+ - Eu posso refatorar a propriedade da minha interface  statusColor: 'yellow' | 'red' | 'green' 
+ por  statusColor: keyof typeof STATUS_COLORS com isso eu evito duplicação de código caso eu queira adicionar mais cores.
 
 
