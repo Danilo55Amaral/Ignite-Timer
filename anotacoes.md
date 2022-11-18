@@ -125,4 +125,20 @@ propriedade min para estipular um valor minimo e max para um valor maximo.
  - Eu posso refatorar a propriedade da minha interface  statusColor: 'yellow' | 'red' | 'green' 
  por  statusColor: keyof typeof STATUS_COLORS com isso eu evito duplicação de código caso eu queira adicionar mais cores.
 
+## Controllerd vs Uncontrolled 
 
+- Quando se trabalha com formularios dentro do React tesmo dois modelos de trabalho dentro da aplicação, a forma controlled ou uncontrolled, esses termos tem muita haver como o react funciona.
+
+- Controlled é manter em tempo real o estado a informação que é inserida pelo usuario dentro 
+do estado que é uma variavel no componente, toda vez que o usuario digitar uma informação no 
+input será atualizada a informação no stado contendo esse novo valor para que o valor que o 
+usuario digitou seja atualizado, Ou seja é quando a gente mantem em tempo real a informação do 
+input do usuario guardada no estado da aplicação.
+
+- O React toda vez que é feita uma atualização de estado é provocada uma nova renderização, toda vez que qualquer função com alteração de estado é chamada o  react recalcula todo o conteudo do 
+componente do estado que mudou, isso não necesspariamente é um processo lento mas se tivermos 
+interfaces muito complexas com muitas informaçãoes isso pode virar um problema, por isso o formulario feita desta maneira controlled pode ser um problema para a aplicação em questão de performace, na maioria das vezes não vai ser mas em alguns momentos pode ser.
+
+- Uncontrolled é a busca da informação do valor do input somente quando for necessário, quando for precisar dela. 
+- Uma das maneiras de fazer isso é utilizar o proprio elemento onSubmit do html e criar uma função handleSubmit que pega o event e pega o valor do input. Com isso eu ganho em performace 
+mas perco em fluidez, existem momentos na aplicação em que precisamos escolher qual dos dois tipos de formularios vamos fazer.
