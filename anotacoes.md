@@ -142,3 +142,43 @@ interfaces muito complexas com muitas informaçãoes isso pode virar um problema
 - Uncontrolled é a busca da informação do valor do input somente quando for necessário, quando for precisar dela. 
 - Uma das maneiras de fazer isso é utilizar o proprio elemento onSubmit do html e criar uma função handleSubmit que pega o event e pega o valor do input. Com isso eu ganho em performace 
 mas perco em fluidez, existem momentos na aplicação em que precisamos escolher qual dos dois tipos de formularios vamos fazer.
+
+## React hook: Form 
+
+- Nesse projeto para fazer os inputs funcionarem utilizamos uma biblioteca do React chamada react hook form essa biblioteca consegue trabalhar das duas formas Controlled e Uncontrolled 
+conseguindo ter performace e flexibilidade ao mesmo tempo.
+- É necessario ir ao site https://react-hook-form.com e seguir os passos da instaslação da biblioteca que é bem simples.
+
+- comando para instalar   npm i react-hook-form 
+
+- importamos a função useForm do react-hook-form em seguida eu chamo essa função dentro do meu 
+componente e ela devolve algumas informações.
+
+- Podemos utilizar a desestruturação e extrair duas funções a register e a handleSubmit a função 
+register é um metodo que adiciona um input ao formulario, o  useForm é como se tivesse criado um 
+novo form na aplicação, a função register informa quais são os campos que vai ter no formulário
+eu abro parenteses e utilizo ... setando register e depois dou um nome para ela {...register('task')} dessa forma.
+
+- A função register recebe o nome do input e ela retorna alguns metodos que são os metodos que 
+utilizamos para trabalhar com inputs no JavaScript como onChange, onBlur,onFocus e varias outras
+funções, como ela retorna várias funções é por isso que utilizamos em sua sintaxe spred operation ... , essa função é na verdade um objeto que traz todas as outras funções.
+
+- A função handleSubmit eu vou utilizar dentro do meu form passando como parametro para ela a 
+função que eu criei handleCreateNewCycle. 
+
+- Dentro da função handleCreateNewCycle eu recebo como argumento o data que são os dados do 
+meu input do formulario. 
+
+- Dentro do meu {...register('minutesAmount')} ele está retornando o valor como uma string e eu 
+posso utilizar um segundo argumento para trazer um objeto de configurações e trazer uma propriedade chamada valueAsNumber que eu posso fazer um boleano true ou false, fazendo isso ele 
+irá retornar um number ao inves de uma string.
+
+- Eu posso desestruturar também de dentro do useform a função watch que observa e posso utilizar ela para observar os campos do meu input, e com isso dá para conseguir saber o valor do campo em 
+tempo real, dentro disso eu posso estabelecer uma condição para que se o campo for diferente de vazio eu quero habilitar o botão, para fazer isso va no botão e colocar disabled={!task}.
+
+- As variaveis auxiliares não alteram a funcionalidade do código, também não vão prejudicar em 
+performace, elas melhoram a legibilidade do código, por isso eu criei a variavel isSubmitDisabled
+pelo nome ela já indica meu submit está desabilitado ? e subistiuo ela no meu disabled, quem pegar esse código já vai entender que estamos desabilitando o submit quando a task não estiver presente.
+
+
+
