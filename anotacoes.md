@@ -180,5 +180,38 @@ tempo real, dentro disso eu posso estabelecer uma condição para que se o campo
 performace, elas melhoram a legibilidade do código, por isso eu criei a variavel isSubmitDisabled
 pelo nome ela já indica meu submit está desabilitado ? e subistiuo ela no meu disabled, quem pegar esse código já vai entender que estamos desabilitando o submit quando a task não estiver presente.
 
+## Validando formulários
+
+- Aqui abordamos como fazer validações no formulário, mostrar mensagens,bordas, o react-hook-form
+ele não tráz validação de forma padrão, o react-hook-form prefere utilizar outras bibliotecas que já são feitas para validação e faz integração com essas libs, abaixo alguns exemplos de boas libs para validação.
+- yup 
+- joi
+- zod 
+- Todas elas são boas e semelhantes, utilizaremos a zod por que ela integra um pouco mais com o 
+typeScript.
+
+- Para fazer a integração com essas libs externas é necessário rodar o comando abaixo: 
+    npm i @hookform/resolvers 
+
+- Para instalar a lib do zod rodamos o comando abaixo: 
+    npm i zod
+
+- Após instalados os pacotes é necessário fazer o import da lib 
+    import { zodResolver } from '@hookform/resolvers/zod';
+
+-Como essa lib não tem um export default é necessário indocar que todas as funções da lib 
+na importação dessa maneira:    import * as zod from 'zod';
+
+- Dentro do useForm é criado um objeto resolver e será utilizada a função zodResolver(), nessa 
+função será passada as regras de validação, por isso foi criado um objeto fora do componente 
+chamado newCycleFormValidationSchema Ps- utilizamos schema por que essas libs utilizam um formato
+de validação que é schema base que nada mais é que um formato que a validalçao é feita com base nesse formato, utilizamos zod.object por que estamos validando um objeto, dentro desse objeto eu possuo dois campos o campo task eu defino o que eu quero na minha validação e posso passar uma mensagem de validação que será retornada ao usuario caso o campo não seja valido, o outro campo 
+é o minutesAmount.
+
+- O próximo passo é passar o objeto que foi criado newCycleFormValidationSchema para o zodResolver
+
+- Eu posso utilizar dentro do useForm a propriedade formState e posso acessar ela dando um console.log passando ela e a propriedade errors isso vai mostrar detalhes de quando não for feita a validação.
+
+
 
 
