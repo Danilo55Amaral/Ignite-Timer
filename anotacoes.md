@@ -227,6 +227,10 @@ substituir minha interfce por um type e passar zod.infer passando para ele o new
 - PS- sempre que for necessário referenciar uma variavel JavaScript dentro do typeScript é 
 necessário utilizar o typeof antes dela.
 
+## Resetando o form 
 
+- Dentro do useForm podemos utilizar uma função chamada reset e apenas invocando essa função 
+dentro do handleCreateNewCycle que automaticamente ele irá limpar os valores dos campos após 
+o submit, essa função volta os valores do campo para os valores que forma definidos como default.
 
 
