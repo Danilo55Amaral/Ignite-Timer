@@ -212,6 +212,21 @@ de validação que é schema base que nada mais é que um formato que a validal�
 
 - Eu posso utilizar dentro do useForm a propriedade formState e posso acessar ela dando um console.log passando ela e a propriedade errors isso vai mostrar detalhes de quando não for feita a validação.
 
+## TypeScript no formulário
+
+- Existe uma propriedade no useForm que se chama defaultValues que permite passar o valor 
+inicial de cada campo.
+
+- como já foi criado uma inteface posso passsar para useform deixando o código mais inteligente.
+
+- o zod possue uma função que extrai a tipagem do form de dentro do schema de validação eu posso 
+substituir minha interfce por um type e passar zod.infer passando para ele o newCycleFormValidationSchema lembrando que não se pode colocar uma variavel javascript assim de forma direta eu necessário converter em uma tipagem por isso utilizamos o typeof.
+
+- O legal disso é que se caso seja necessário adicionar mais uma propriedade ao newCycleFormValidationSchema ele já faz a tipagem de forma automatica não sendo necessário colcar na interface.
+
+- PS- sempre que for necessário referenciar uma variavel JavaScript dentro do typeScript é 
+necessário utilizar o typeof antes dela.
+
 
 
 
