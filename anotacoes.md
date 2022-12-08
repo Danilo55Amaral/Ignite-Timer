@@ -258,4 +258,25 @@ foi definido um novo state  activeCycleId.
 
 - Para mostrar em tela qual o ciclo ativo foi criado uma variavel chamada activeCycle essa variavel com base no id do ciclo ativo, percorrer todos os ciclos existentes e retornar qual o 
 ciclo que tem o mesmo id do ciclo ativo para que se consiga retornar essas informações.
+
+## Criando countdown 
+
+- Na versão atual pode ser inserido a quantidade de minutos no ciclo porém a redução do tempo é
+feita a partir de segundos e por isso é necessário conseguir manipular o Countdown em segundos.
+
+- Foi criado uma variavel que converte o numero de ciclos de minutos para segundos essa variavel 
+se chama totalSeconds.
+
+- Foi necessário também a criação de um novo estado chamado amountSecondsPassed esse estado armazena a quantidade de segundos que já se passaram desde que o ciclo foi criado. Com isso 
+a gente vai mostrar na interface a informação atualizada.
+
+- Também foi criada uma variavel chamada currentSeconds que conta a quantidade que já passou. 
+
+- É necessário converter essa varialvel de forma que se consiga exibir em tela, em tela tem que
+ser exiibido em minutos e segundos, para isso é necessário calcular a partir do total de segundos
+quantos minutos se tem dentro do total de segundos vou pegar o total de segundos divido por 60 porém essa divisão pode dar um numero quebrado e por isso utilizamos o metodo floor que faz o arredondamento para baixo, vou armazenar em uma variavel chamada minutesAmount.
+
+- Também é necessário calcular a quantidade de segundos do resto dessa divisão e vou armazenar em uma variavel chamada secondsAmount.
+
+- Foi criada mais uma variavel chamada minutes ela converte para string o minutesAmount e com isso foi utilizado o metodo padStar que preenche uma string até um tamanho especifico caso não tenha, com algum caracter. A variavel de minutos é necessário ter 2 caracteres se caso ela não possuir vai ser incluido 0 no start da string ou seja no começo até completar 2 caracteres. Foi duplicado esse mesmo código porém para segundos.
     
