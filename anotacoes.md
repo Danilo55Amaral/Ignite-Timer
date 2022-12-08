@@ -233,4 +233,29 @@ necessário utilizar o typeof antes dela.
 dentro do handleCreateNewCycle que automaticamente ele irá limpar os valores dos campos após 
 o submit, essa função volta os valores do campo para os valores que forma definidos como default.
 
+## Iniciando novo ciclo  (Estado)
 
+- Adicionando um ciclo ativo dentro da aplicação para que o novo ciclo se inicie na aplicação 
+é necessário ter um estado, IMPORTANTE --> O estado é a unica forma de conseguir armazenar alguma
+informação dentro do componente que consiga fazer a interface reagir e essa informação.
+
+- Por isso foi criado um estado(useState) para armazenar esse ciclo.
+- Também foi criado uma interface chamada cycle para definir o formato dos ciclos da aplicação
+
+- Importante que quando passei para a interface Cycle para meu estado eu passei como uma lista 
+de ciclos por isso eu passo como array <Cycle[]>
+
+- É Importante iniciar o estado com uma informação do mesmo tipo que for ser manuseado ao longo da aplicação. ex: const [cycles, setCycles] = useState<Cycle[]>([]) eu passei uma lista de definir um lista vazia.
+
+- com isso eu posso dentro do handleCreateNewCycle iniciar a criação do ciclo.
+
+- Quando o estado depende da sua verão anterior antes de ser alterado é interessante esse 
+valor do estado ser setado em formato de function é o conceito de closures no React 
+     setCycles((state) => [...state, newCycle])
+
+- Existe uma lista de ciclos na aplicação porém só existe um ciclo ativo por momento e para isso 
+foi definido um novo state  activeCycleId.
+
+- Para mostrar em tela qual o ciclo ativo foi criado uma variavel chamada activeCycle essa variavel com base no id do ciclo ativo, percorrer todos os ciclos existentes e retornar qual o 
+ciclo que tem o mesmo id do ciclo ativo para que se consiga retornar essas informações.
+    
