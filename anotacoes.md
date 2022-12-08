@@ -280,3 +280,23 @@ quantos minutos se tem dentro do total de segundos vou pegar o total de segundos
 
 - Foi criada mais uma variavel chamada minutes ela converte para string o minutesAmount e com isso foi utilizado o metodo padStar que preenche uma string até um tamanho especifico caso não tenha, com algum caracter. A variavel de minutos é necessário ter 2 caracteres se caso ela não possuir vai ser incluido 0 no start da string ou seja no começo até completar 2 caracteres. Foi duplicado esse mesmo código porém para segundos.
     
+## hook useEffect
+
+- Os hooks são funcionalidades no React e elas tem como função acoplar algum funcionamento ao componente da aplicação, eles tem prefixo use como useState, useEffect.
+
+# useState
+
+- O useState consegue armazenar variaveis que quando tem o seu valor alterado provocam uma nova
+renderização no  componente, com isso se consegue exibir em tempo real uma  informação conforme
+for atualizada por alguma funcionalidade ou clique do usuario ou algo semelhante.
+
+# useEffect 
+
+- useEffect -> Side-effect -> Efeito Colateral
+
+- O useEffect permite ficar monitorando mudanças em uma variavel, e toda vez que essa variavel mudar indenpendente de motivo, origem, ou quem alterou essa variavel, uma função pode ser disparada.
+
+- O useEffect executa também no inicio assim que o componente for exibido em tela e depois toda vez que a lista por ex for alterada, caso nao queira que isso aconteça ser feito condições dentro do useEffect.
+
+- O useEffect caso não seja passado nada para o array de dependencias que faz o monitoramento ele apenas irá executar uma vez quando o componente for exibido em tela. Essa estratégia é muito 
+utilizada para fazer chamas api.
