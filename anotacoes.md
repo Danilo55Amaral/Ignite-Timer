@@ -300,3 +300,26 @@ for atualizada por alguma funcionalidade ou clique do usuario ou algo semelhante
 
 - O useEffect caso não seja passado nada para o array de dependencias que faz o monitoramento ele apenas irá executar uma vez quando o componente for exibido em tela. Essa estratégia é muito 
 utilizada para fazer chamas api.
+
+- Ps- Quando utiloizamos dentro do useEffect uma variavel externa e sempre qie for usada uma
+variavel externa obrigatoriamente é necessário incluir essa variavel como uma dependencia do 
+useEffect, no projeto foi a variavel activeCycle.
+
+## Reduzindo countdown
+
+- Existem muitas formas de resuzir o time por segundos na aplicação, mas aqui comecamos 
+definindo uma nova propriedade starDate que sua finalidade é salvar a data que o time inicia.
+- Dentro do newCycle foi jogado o starDate como sendo a data atual sendo a data que o ciclo 
+iniciou. 
+
+- Também é necessário criar um useEffect e dentro dele é criado o intervalo.
+
+- É necessário comparar a data atual com a data que fica salva no starDate e verificar 
+quantos segundos se passaram, para isso foi instalado um pacote chamado date fns basta 
+rodar o comando   npm i date-fns  de dentro desse pacote utilizamos uma função chamada 
+differenceInSeconds que calcula a diferença de duas datas em segundos.
+
+- Ps- Quando utiloizamos dentro do useEffect uma variavel externa e sempre qie for usada uma
+variavel externa obrigatoriamente é necessário incluir essa variavel como uma dependencia do 
+useEffect, no projeto foi a variavel activeCycle, isso vai inplicar em um funcionamento toda vez 
+que essa variavel mudar esse trecho de código vai executar novamente isso pode ser bom ou ruim. Para esse projeto não vai ter relevancia no momento.
