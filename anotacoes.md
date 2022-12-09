@@ -305,7 +305,7 @@ utilizada para fazer chamas api.
 variavel externa obrigatoriamente é necessário incluir essa variavel como uma dependencia do 
 useEffect, no projeto foi a variavel activeCycle.
 
-## Reduzindo countdown
+## Reduzindo countdown  (useEffect )
 
 - Existem muitas formas de resuzir o time por segundos na aplicação, mas aqui comecamos 
 definindo uma nova propriedade starDate que sua finalidade é salvar a data que o time inicia.
@@ -323,3 +323,15 @@ differenceInSeconds que calcula a diferença de duas datas em segundos.
 variavel externa obrigatoriamente é necessário incluir essa variavel como uma dependencia do 
 useEffect, no projeto foi a variavel activeCycle, isso vai inplicar em um funcionamento toda vez 
 que essa variavel mudar esse trecho de código vai executar novamente isso pode ser bom ou ruim. Para esse projeto não vai ter relevancia no momento.
+
+## Mudando title da página (useEffect)
+
+- Aqui resolvemos alguns bugs e melhoramos um pouco o código da aplicação.
+- Umas das coisas sobre o useEffect é que pode-se ter um retorno e esse retorno sempre será 
+uma function essa função possue uma responsabilidade de se tinha um intervalo rodando com o ciclo criado anteriormente essa função serve para que quando o useEffect for executado novamente 
+por ter tido alguma mudança na variavel de dependencia eu possa fazer algo para resetar o que 
+estava sendo feito no useEffect anterior. Essa função é importante para deletar os intervalos que não são mais necessários. Isso irá corrigir o bug que ficava acrescentando os novos intervalos ao que já estava sendo feito a contagem.
+
+- Um dos bugs foi resolvido com essa implementação mas quando o novo ciclo foi criado ele cria baseado na quantidade de tempo que passou no ciclo anterior, isso acontece por que o tempo que segundo quie se passaram não está sendo resetado  na variavel amountSecondsPassed, isso faz com que seja aproveitado a quantidade de segundos que se passaram no ciclo anterior para o novo ciclo criado, para resolver esse bug bastou passar a variavel setAmountSecondsPassed dentro da função handleCreateNewCycle resetando para zero.
+
+- Também foi criado uma nova funcionalidade que quando se abre uma nova aba o contdown fica contando em cima na aba do titulo, Para isso foi criado outro useEffect e nele toda vez que minutes e seconds for atualizados irpa ser interpolado uma template string no document.title, isso foi colocado em uma condição para acontecer apenas quando se tiver um ciclo ativo.
