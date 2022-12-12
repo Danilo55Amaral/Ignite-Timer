@@ -335,3 +335,20 @@ estava sendo feito no useEffect anterior. Essa função é importante para delet
 - Um dos bugs foi resolvido com essa implementação mas quando o novo ciclo foi criado ele cria baseado na quantidade de tempo que passou no ciclo anterior, isso acontece por que o tempo que segundo quie se passaram não está sendo resetado  na variavel amountSecondsPassed, isso faz com que seja aproveitado a quantidade de segundos que se passaram no ciclo anterior para o novo ciclo criado, para resolver esse bug bastou passar a variavel setAmountSecondsPassed dentro da função handleCreateNewCycle resetando para zero.
 
 - Também foi criado uma nova funcionalidade que quando se abre uma nova aba o contdown fica contando em cima na aba do titulo, Para isso foi criado outro useEffect e nele toda vez que minutes e seconds for atualizados irpa ser interpolado uma template string no document.title, isso foi colocado em uma condição para acontecer apenas quando se tiver um ciclo ativo.
+
+## Interromper o ciclo
+
+- Quando o ciclo estiver rolando o botão precisa mudar para a funcionalidade de interromper o ciclo.
+
+- Para isso na parte do botão de iniciar um novo ciclo é necessário criar um if com a seguinte 
+condição se tiver um ciclo ja rolando irá ser mostrado algo se não será mostrado o botão de iniciar um novo ciclo. No primeiro trecho dessa condição eu criei um StopCounterButton o tipode dele não será submit e sim button isso por que dessa vez eu não quero fazer um submit no form apenas interromper o ciclo atual.
+
+- Uma das implementações é desabilitar o campo de input quando algum ciclo estiver rodando e para isso basta passar a propriedade disabled com o activeCycle dentro de TaskInput. O valor dessa propriedade precisa ser convertido para bolean e por isso basta colocar !! que faz com que se tiver algum valor converta para true.
+
+- Quando o botão de interromper for clicado é necessário retornar ao estado inicial da aplicação
+para isso foi criada uma função chamada handleInterruptCycle essa função vai setar o setActiveCycle de volta para null e outra coisa também é anotar dentro do ciclo se ele foi 
+interrompido ou não, para que depois se tenha um histórico de quais ciclos foram interrompidos 
+pela metade e quais não foram.
+
+- Eu preciso dentro da minha interface cycle colocar mais um Date chamado interruptedDate.
+
