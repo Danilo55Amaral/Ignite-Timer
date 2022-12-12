@@ -352,3 +352,15 @@ pela metade e quais não foram.
 
 - Eu preciso dentro da minha interface cycle colocar mais um Date chamado interruptedDate.
 
+## Ciclo completo
+
+- Temos um useEffect que percorre setInterval e calcula a diferença de segundos, é preciso que 
+se a diferença em segundos da data que o ciclo foi criado, para a data atual for igual ou maior 
+que o total de segundos quer dizer que o ciclo acabou. 
+
+- Foi pego differenceInSeconds e foi colocado em uma variavel chamada secondsDifference 
+
+- Eu preciso criar uma outra informação na interface finisheDate.
+
+
+
