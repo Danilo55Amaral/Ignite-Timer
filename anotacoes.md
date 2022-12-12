@@ -362,5 +362,13 @@ que o total de segundos quer dizer que o ciclo acabou.
 
 - Eu preciso criar uma outra informação na interface finisheDate.
 
+## Separando Componentes
 
+- Nota-se que o componente da home está muito grande e ficando complexo nesse caso para melhorar 
+o código podemos separar em mais componentes.
+- Quando um componente começa a crescer muito devemos separar ele em componentes menores.
 
+- Dentro de home eu crio duas pastas NewCycleForm com um arquivo index.tsx e um 
+arquivo styled. 
+- Também crio uma outra pasta que também será um componente chamado Countdown
+- Depois foi separado nesses dois componentes partes do home.
