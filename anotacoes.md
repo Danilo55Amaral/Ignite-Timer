@@ -372,3 +372,33 @@ o código podemos separar em mais componentes.
 arquivo styled. 
 - Também crio uma outra pasta que também será um componente chamado Countdown
 - Depois foi separado nesses dois componentes partes do home.
+
+## Prop Drilling no React
+
+- Note que mesmo que depois de separar em componentes existem variaveis que devem
+ficar no componente home, existem informações que não podem ser movidas para dentro do Countdown por que elas precisam ser usadas fora desse componente também.
+
+- A principal forma de se fazer comunicação entre componentes é utilizando propriedades, eu posso passar essas propriedades com interfaces.
+
+- Note que ao separar em componentes separados tivemos que criar varias propriedaes e passar entre componentes isso meio que acabou deixando o código 
+ainda mais complexo de que quando estava tudo no componente home.
+
+- Esse problema é bem comum no react e se chama Prop Drilling que é quando temos 
+muitas propriedades apenas para comunicação entre componentes, quando se tem muitas propriedade sendo passadas para componentes filhos apenas para fazer a 
+comunicação entre esses componentes, isso pode ser bem trabalhoso e prejudicar 
+bastante a manuntenção da aplicação.
+
+- Quando não é utilizado em excesso tipo sendo necessário passar 2 ou 3 as propriedades resolvem lindamente nossos problemas mas a partir do momento que 
+se tem em excesso isso acaba poluindo o código para dar manutenção.
+
+- As Propriedades são a princípal forma de fazer a comunicação entre componentes porém não é a única existe uma outra forma  de fazer isso com  um conceito do React Context API. 
+
+## Context API 
+
+- Permite compartilharmos informações entre Varios componentes ao mesmo tempo
+- Ela não precisa utilizar de propriedades 
+- É como se fossem informações Globais que todos os componentes podem ter acesso,
+Todos os componentes podem modificar essas informações, quando modificadas e 
+independentemente de quem modificou essas informações, todos os componentes que 
+dependiam e dependem dessa informação são atualizados.
+- É como conseguir se comunicar com varios componentes ao mesmo tempo da aplicação.
