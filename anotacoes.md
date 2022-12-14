@@ -402,3 +402,42 @@ Todos os componentes podem modificar essas informações, quando modificadas e
 independentemente de quem modificou essas informações, todos os componentes que 
 dependiam e dependem dessa informação são atualizados.
 - É como conseguir se comunicar com varios componentes ao mesmo tempo da aplicação.
+
+## Entendendo contextos
+
+- A context API é uma maneira de compartilhar informações entre varios componentes do app de uma maneira mais sinples sem precisar utilizar várias
+proppriedades.
+
+- Sempre que for necessário que as informações fiquem acessiveis por contexto os 
+dados so contexto precisam está no componente mais por fora possivel dos subcomponentes que precisam de acesso aquela informação.
+
+- Para compartilhar a informação entre todos os componentes filhos, devemos criar um provider e colocar em volta dos componentes filhos no componetne raiz, 
+e as infomrações devem ser passadas utilizando value={{}}.
+
+- É necessário importar o useContext e createContext.
+
+## Convertendo para Contexto 
+
+- Eu crio dentro do componente home uma const chamada CycleContext passando 
+createContext passando um objeto vazio. o createContext deve ser inportado de dentro do 'react'.
+
+- Também foi necessário criar uma interface que coloquei o nome de CyclesContextType. Nessa interface vamos informar quais são as informações 
+que vamos armazenar dentro do contexto.
+
+- A propriedade activeCycle eu passar na interface como Cycle ou undefined por que se ela não tem um ciclo ativo ela é indefinida, ele não consegue encontrar 
+nenhum ciclo ativo.
+
+-  Passaei ainterface como tipagem no createContext  dessa forma createContext({} as CyclesContextType) se eu não fizer isso o TypeScript vai dar erro informando que temos um contexto vazio.
+
+- Eu vou passar o meu provider por em volta dos componentes que precisam acessa-lo <CyclesContext.Provider />
+
+- Para que o Countdown consiga acessar o contexto é necessário exporta-lo 
+        export  const CyclesContext = createContext({} as CyclesContextType)
+
+- Dentro do Countdown utilizaremos o useContext e dentro passamos o CyclesContext, com isso podemos acessar a propriedade activeCycle, Posso com isso chamar qualquer informação do meu contexto.
+
+- Eu criei uma função markCurrentCycleAsFinished para marcar um ciclo como finalizado e vou enviar a função como contexto.
+
+- PS- A função arkCurrentCycleAsFinished foi definida no componente home por que ela usa da função setCycles que só existe dentro do componente home, a função arkCurrentCycleAsFinished
+foi enviada dentro do contexto assim todos os componentes que estão dentro desse contexto tem 
+acesso a ela e quando o componente Countdown chama essa função ele chama a função que está na home que vai alerar o estado de ciclos.  Essa lógica é muito  importante.
