@@ -441,3 +441,21 @@ nenhum ciclo ativo.
 - PS- A função arkCurrentCycleAsFinished foi definida no componente home por que ela usa da função setCycles que só existe dentro do componente home, a função arkCurrentCycleAsFinished
 foi enviada dentro do contexto assim todos os componentes que estão dentro desse contexto tem 
 acesso a ela e quando o componente Countdown chama essa função ele chama a função que está na home que vai alerar o estado de ciclos.  Essa lógica é muito  importante.
+
+## Contexto no formulario
+
+- geralmente quando temos uma informação que não pertence tanto ao contexto como a função 
+register, é algo de uma lib externa que pode ser trocada a qualquer momento. Geralmente 
+tentamos manter no contexto somente coisas que não vão mudar se for trocada uma lib ou qualquer outra coisa assim.
+
+- O react hook form oferece um contexto proprio que podemos utilizar e vou utilizar, FormProvider em volta do NewCycleForm. dentro do FormProvider eu vou utilizar o spred 
+operation {...newCycleForm} que é a variavel.
+
+- O operador spred pega cada uma das propriedades do objeto e passa como uma propriedade 
+para o meu componente.
+
+- Eu utilizei o contexto do form FormProvider apenas em volta do NewCycleform por que apenas 
+esse componente irá precisar dele.
+
+- PS- Eu criei um array com propriedade e armazenei em uma variavel chamada newCycleForm 
+depois utilizei o operador spred passando esse variavel {...newCycleForm} enviando todas as propriedades pelo meu  contexto.
