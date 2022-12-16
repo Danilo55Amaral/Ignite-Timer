@@ -459,3 +459,36 @@ esse componente irá precisar dele.
 
 - PS- Eu criei um array com propriedade e armazenei em uma variavel chamada newCycleForm 
 depois utilizei o operador spred passando esse variavel {...newCycleForm} enviando todas as propriedades pelo meu  contexto.
+
+## Contexto entre rotas 
+
+- Existe também na aplicalção a página de hitórico e ela também precisa saber sobre os ciclos,
+o provider do CyclesContext está dentro da home não tem como essas informações serem acessadas 
+na página do Histórico.
+
+- É necessário compartilhar essa informação dos ciclos entre as duas páginas da aplicação, uma das estratégias é mover o contexto para um local que englobe todos os componentes que vão precisar dessas informações, o  unico local em que todas as páginas e componentes vão ter acesso é no componente rayz da aplicalção o app.tsx, existem um porém que para fazer isso será necessário mover varias funções e importações para dentro do app.tsx e isso o deixaria bastante poluido quando levamos em conta que outros contextos podem ser criados para alguma implementação futura.
+
+- Para resolver esse problema criamos uma pasta separada contexts só para contextos e dentro dela eu crio um arquivo para o meu contexto vou chama-lo de CyclesContext.tsx dentro desse arquivo foi colocado tudo que tem relação com o contexto.
+
+- É importante criar o arquivo de contexto desacoplado de libs externas por que se um dia 
+for necessário mudar as libs externas o contexto não seja afetado. Por isso foicriado 
+uma nova interface CreateCycleData para tipar alguns dados que em home estão juntos com libs externas.
+
+- Após criar meu arquivo de contexto eu volto ao meu app.tsx e por volta das rotas eu coloco o  componente que foi criado no arquivo de contexto.
+
+- Feito isso agora eu posso acessar minhas propriedades também na página de histórico basta utilizar o meu contexto.
+
+- Para fazer um teste basta eu utilizar o seguinte código 
+      <pre>{JSON.stringify(cycles, null, 2)}</pre>
+
+
+
+## children
+
+- Eu passei  um elemento dentro da tag do CyclesContextProvider que é o Router e isso 
+irá retornar um erro do react, isso aocntece por que eu preciso dentro do CyclesContextProvider falar no return onde que o contúdo que está por dentro que é considerado como filho vai ser acoplado, isso no react é chamado de children, dentro 
+das propriedades do componente pai deve-se passar uma propriedade especial do react chamada children e vou utilizar ela dentro do CyclesContext.Provider dessa forma {children}
+
+- Para satisfazer a tipagem da propriedade children eu posso utilizar o ReactNode e passa-lo como propriedade, devo importar do react.
+
+- O ReactNode serve para tipar tudo aquilo que eu utilizo no meu código tsx.
