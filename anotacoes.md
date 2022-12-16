@@ -492,3 +492,12 @@ das propriedades do componente pai deve-se passar uma propriedade especial do re
 - Para satisfazer a tipagem da propriedade children eu posso utilizar o ReactNode e passa-lo como propriedade, devo importar do react.
 
 - O ReactNode serve para tipar tudo aquilo que eu utilizo no meu código tsx.
+
+## Reset do formulario
+
+- Uma das coisas importantes foi não trazer libs externas para dentro do contexto isso por que o contexto deve ficar intacto caso seja necessário trocar alguma lib.
+
+- Dentro de home é necessário criar uma função chamada handleCreateNewCycle e ela irá chamar a função createNewCycle, essa função recebe os dados que é NewCycleFormData e passa esses dados  para createNewCycle, ela também chama a função reset resetando o formulario.
+
+## funções handle
+- Toda vez que eu crio uma função para ser chamada a partir de um evento eu coloco o prefixo handle.
