@@ -509,3 +509,7 @@ das propriedades do componente pai deve-se passar uma propriedade especial do re
 - dentro da tbody eu chamo a variavel cycles passando um map e para cada um dos ciclos eu vou retornar um tr, na tr é necessário passar o atributo key que é a informação única que se tem para cada ciclo no passo eu passei o id, em seguida é só passar os dados para as tds.
 
 - Na parte de mostrar o Status eu criei uma condição utilizando && que tudo que tiver na segunda parte só vai ser executada se o que tiver na primeira pare for true com isso o componente Status só vai ser mostrado se o que eu setei na primeira parte da minha condição for verdadeira.
+
+## Formatação de data
+
+- Para fazer a formatação da data foi utilizado a lib date-fns e foi utilizado um metodo chamado formatDistanceToNow eu também devo importar o indioma ptBR.
