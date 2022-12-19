@@ -486,7 +486,7 @@ uma nova interface CreateCycleData para tipar alguns dados que em home estão ju
 ## children
 
 - Eu passei  um elemento dentro da tag do CyclesContextProvider que é o Router e isso 
-irá retornar um erro do react, isso aocntece por que eu preciso dentro do CyclesContextProvider falar no return onde que o contúdo que está por dentro que é considerado como filho vai ser acoplado, isso no react é chamado de children, dentro 
+irá retornar um erro do react, isso acontece por que eu preciso dentro do CyclesContextProvider falar no return onde que o conteúdo que está por dentro que é considerado como filho vai ser acoplado, isso no react é chamado de children, dentro 
 das propriedades do componente pai deve-se passar uma propriedade especial do react chamada children e vou utilizar ela dentro do CyclesContext.Provider dessa forma {children}
 
 - Para satisfazer a tipagem da propriedade children eu posso utilizar o ReactNode e passa-lo como propriedade, devo importar do react.
@@ -513,3 +513,51 @@ das propriedades do componente pai deve-se passar uma propriedade especial do re
 ## Formatação de data
 
 - Para fazer a formatação da data foi utilizado a lib date-fns e foi utilizado um metodo chamado formatDistanceToNow eu também devo importar o indioma ptBR.
+
+## Reducers
+
+## Criando reducer de ciclos
+
+- Aqui temos mais um hook do react o useReducer esse hook serve para arazenar uma 
+informaçao e alterar essa informação posteriormente, geralmente se usa o reducer para 
+armazenar informações mais complexas, principalmente nas horas em que se precisa alterar 
+essas informações.
+
+- Um exemplo prático é na função interruptCurrentCycle que criamos para interrromper ciclos 
+se quisermos que ela seja utilizada em outro local da aplicação será necessário copiar ela, e 
+com o reducer isso não é necessárop por que  é como se tivesse um local fixo para todas as alterações que possam acontecer dentro de um estado do componente.
+
+- Foi criado o Reduce dentro do proivider que criamos em CyclesContext.tsx, o useReducer recebe 
+dois parametros o primeiro parametro é uma função. o segundo parametro é qual o valor inicial da variavel, esse valor inicial pode ser um array vazio.
+
+- A função do reducer sempre irá receber dois  parametros o state que é o valor atual em tempo 
+real da variavel, e a action é a ação que o usuario quer realizar de alteração dentro da variavel essa action é algo unico para indicar uma ação que o usuario está querendo fazer para alterar o estado ou seja são ações que o uruario pode querer utilizar para modificar o estado, essa função vai retornar um state. 
+
+- É necessário tipar o state e nesse caso como estámos utilizando cycles vamos utilizar um 
+array de Cycle, isso por que eu devo tipar com o formato que vai ser armazenado no meu state, 
+o action por ainda não se ter uma tipagem para ele pode usar o any. 
+
+- O setCycles vai ser agora um metodo para a action ser disparada ele não vai ser mais um metodo que altera o valor de cycles, por isso eu troquei o nome dele para dispatch é um nome que é dado geralmente para uma variavel ou função que se quer disparar algum funcionamento.
+
+- Após isso eu substituo os locais em que eu utilizo o setCycles por dispatch.
+
+- Dentro do dispatch é preciso enviar alguma informação que dentro do reducer seja disntinguir 
+uma action da outra, ou seja quando a função dispatch é chamada ela será executada e o valor que foi passado ao dispatch para para o lugar de action e dentro do reducer pode ser feita a 
+alteração desejada no estado.
+
+- Quando se usa reducer dentro do react é muito comum que ao invés de enviar a informação crua seja enviado um objeto, dentro desse objeto um type e dentro do type seja informado a ação que se quer realizar, e dentro de um novo objeto chamado payload eu envio os dados. ou seja o type
+que podemos chamar do quer quiser e o payload que enviamos o que quisermos enviar.
+
+- Eu dei um log dentro do reducer em state  e action para testar se o valor enviado estava chegando.
+
+- Dentro do reducer eu criei a seguinte condição se o action.type for igual a ADD_NEW_CYCLE ao 
+invés de retornar o state se nenhuma alteração vai ser retornado um novo array copiando o state
+e adcionando no final o action.payload.newCycle.
+
+# Resumindo
+- Nota-se que dentro do reducer temos uma função que vai agregar a função que recebe todas as 
+ações de modificações nesse estado, ou seja eu vou ter um ponto central para todas as alterações que precisam acontecer, essas alterações são indentificadas através do type que é 
+enviado no dispatch.
+
+- O reducer nem sempre é utilizado é mais utilizado quando se tem um estado complexo que armazena informações complexas dentro de um estado e essas informações precisam mudar de forma
+constante com alterações provindas de varias fontes diferentes.
