@@ -561,3 +561,20 @@ enviado no dispatch.
 
 - O reducer nem sempre é utilizado é mais utilizado quando se tem um estado complexo que armazena informações complexas dentro de um estado e essas informações precisam mudar de forma
 constante com alterações provindas de varias fontes diferentes.
+
+## Salvando um objeto no Reducer
+
+- O que estava acontecendo é que o ciclo estava sendo alterado e o id estava sendo alterado logo em seguida nota-se que era feita duas alterações no estado uma após a outra, algumas 
+vezes alterar até 3 coisas no estado ao mesmo tempo, existiam estados que eram correlacionados e que era necessário alterar eles ao mesmo tempo e para isso era preciso chamar funções diferentes. 
+
+- Quando um Reducer é usado não se tem mais a obrigatoriedade de salvar dentro do reducer somente uma informação, pode-se salvar várias informações dentro e alterar várias informações
+ao mesmo tempo. 
+
+- No meu algoritimo o id do ciclo ativo vão ser controlados por um unico estado que é o reducer
+e com isso não é necessário ter vários estados dentro do componente para controlar o valor de 
+várias informações se essas informações pertencem ao mesmo assunto ou mesma regra.
+
+- Eu renomeei cycles por cyclesState e criei uma const que estrai cycles e activeCycled de cyclesState.
+
+- O Reducer é um padrão um patern utilizado em varias ferramentas diferentes, várias libs diferentes, varios contextos diferentes.
+
