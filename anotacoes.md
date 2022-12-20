@@ -578,3 +578,8 @@ várias informações se essas informações pertencem ao mesmo assunto ou mesma
 
 - O Reducer é um padrão um patern utilizado em varias ferramentas diferentes, várias libs diferentes, varios contextos diferentes.
 
+## Marcando ciclo como finalizado (Refatorando o Reducer)
+
+- Aqui vamor marcar o ciclo como finalizado 
+- Nota-se que temos dentro do reduce um encadeamento de ifs que dá para ser refatorato 
+por um switch
