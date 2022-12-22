@@ -587,3 +587,10 @@ por um switch
 ## Separando Action Types
 
 - Para melhorar o código pegamos o conteudo da função do reducer e colocamos em outro arquivo dentro de uma pasta chamada reducers.
+
+## Separando Actions
+
+- Podemos abstrair também as chamadas das actions, dentro da pasta reducers foi criado uma pasta chamada cycles e dentro dela foi renomeado o arquivo cycles para 
+reducer e foi criado um novo arquivo chamado actions.
+
+- dentro do arquivo actions foi criada uma função para cada action.
