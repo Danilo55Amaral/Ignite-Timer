@@ -583,3 +583,7 @@ várias informações se essas informações pertencem ao mesmo assunto ou mesma
 - Aqui vamor marcar o ciclo como finalizado 
 - Nota-se que temos dentro do reduce um encadeamento de ifs que dá para ser refatorato 
 por um switch
+
+## Separando Action Types
+
+- Para melhorar o código pegamos o conteudo da função do reducer e colocamos em outro arquivo dentro de uma pasta chamada reducers.
