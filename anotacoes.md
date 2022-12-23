@@ -610,3 +610,22 @@ variaveis tradicionais do JS.
 
 - basta chamar o metodo produce passar o que gostaria de modificar e no segundo parametro recebe uma variavel draft que é o rascunho e dentro dele podemos fazer as 
 alterações que queremos fazer. Com isso eu consigo por ex utilizar metodos como o push que são metodos que não respeitam a imutabilidade do react.
+
+## Salvando estado no storage
+
+- Uma das coisas que podemos fazer como melhoria no código é salvar as informações dos ciclos, no storage do Browser com isso assim que a página for atualizada os dados não serão perdidos e os ciclos não irão ter que ser recriados do zero.
+
+- Para isso dentro do CyclesContext foi criado um useEffect e vou definir que toda 
+vez que o cyclesState mudar independente do motivo isso será salvo no local storage.
+
+- Ps- o localStorage só permite que salvamos textos dentro dele.
+
+- Quando for salvar informações no localStorage sempre coloque um prefixo com o nome 
+da aplicação e dois pontos o nome da informação ex: @ignite-timer:cycles-state outra 
+dica importante é colocar também uma versão @ignite-timer:cycles-state-1.0.0 versionamos por que se algum dia for necessário trocar essa variavel isso pode evitar bugs.
+
+- Eu posso ir no Browser em Application -> Local Storage -> Eu já vou sonseguir encontrar meu @ignite-timer:cycles-state-1.0.0
+
+- Pode-se enviar um terceiro parametro para o useReducer que é uma função que é disparada assim que o reducer for criado.
+Para que esses dados iniciais do reducer sejam recuperados em um outro lugar
+
