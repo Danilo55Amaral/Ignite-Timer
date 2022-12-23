@@ -629,3 +629,9 @@ dica importante é colocar também uma versão @ignite-timer:cycles-state-1.0.0 
 - Pode-se enviar um terceiro parametro para o useReducer que é uma função que é disparada assim que o reducer for criado.
 Para que esses dados iniciais do reducer sejam recuperados em um outro lugar
 
+## Corrigindo listagem do histórico 
+
+- Verificando no console o erro informa que o erro acontece dentro do metodo toDate
+isso acontece por que quando salvamos os dados do historico o localStorage só suporta
+strings ele não suporta outros tipos de calsses e objetos como é o Date, por isso 
+para resolver o problema basta converter a data utilizando new Date new Date(cycle.starDate).
