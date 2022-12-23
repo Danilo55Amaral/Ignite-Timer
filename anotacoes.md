@@ -594,3 +594,19 @@ por um switch
 reducer e foi criado um novo arquivo chamado actions.
 
 - dentro do arquivo actions foi criada uma função para cada action.
+
+## Utilizando immer 
+
+- O immer é um lib que é utilizada para trabalhar com dados imutaveis, quando vai 
+alterar estados e a alteração ela é muito profunda, alterar alguma posição que pode 
+está dentro de uma posição no aray é necessário fazer map que muitas vezes podem 
+ser confusos, o  immer permite com que trabalhemos com estruturas de dados imutaveis
+como se essas estruturas de dados não fossem imutaveis, ou seja ele permite que seja feita alterações nas variaveis no estado do react, reducer do react, como se fossem 
+variaveis tradicionais do JS.
+
+- Para instalar o immer basta rodar o comando npm i immer
+
+- Dentro do reducer foi importado o produce de dentro do immer e esse metodo produce é que vai ser chamado.
+
+- basta chamar o metodo produce passar o que gostaria de modificar e no segundo parametro recebe uma variavel draft que é o rascunho e dentro dele podemos fazer as 
+alterações que queremos fazer. Com isso eu consigo por ex utilizar metodos como o push que são metodos que não respeitam a imutabilidade do react.
