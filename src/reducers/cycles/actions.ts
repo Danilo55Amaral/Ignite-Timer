@@ -1,6 +1,5 @@
 import { Cycle } from "./reducer";
 
-
 export enum actionTypes {
     ADD_NEW_CYCLE = 'ADD_NEW_CYCLE',
     INTERRUPT_CURRENT_CYCLE = 'INTERRUPT_CURRENT_CYCLE',
