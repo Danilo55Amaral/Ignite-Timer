@@ -31,5 +31,7 @@ ou que ainda estejam em andamento.
 - Para rodar o projeto é necessário ter o nodejs instalado em sua maquina
 - Abra a pasta do projeto utilizando o terminal e execute o seguinte comando: npm rum dev
 
-
-
+## Projeto
+![ignite-timer01.PNG](https://github.com/Danilo55Amaral/Ignite-Timer/blob/main/ignite-timer01.PNG)
+![ignite-timer02.PNG](https://github.com/Danilo55Amaral/Ignite-Timer/blob/main/ignite-timer02.PNG)
+![ignite-timer03.PNG](https://github.com/Danilo55Amaral/Ignite-Timer/blob/main/ignite-timer03.PNG)
